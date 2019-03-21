@@ -96,3 +96,65 @@ while (answer !== "yes") {
 }
 
 alert("Yay we made it!!");
+
+
+
+//isEven
+function isEven(num) {
+	return num % 2===0;
+}	
+
+function fact(num){
+	//result variable
+	var result = 1;
+	//calculate fact and store in result
+	for (var i = 2; i < num; i++) {
+		result *= i;
+	}
+	//return result variable 
+	return result;
+}
+
+function dashed(str) {
+	var newStr = str.replace(/-/g, "_");
+	return newStr;
+}
+
+function sing() {
+	console.log("WEEEEEEE");
+}
+
+setInterval(sing, 10000);
+
+// todo app
+
+var todos = [];
+
+var input = prompt("what would you like to do?");
+
+
+
+while (input !== quit) {
+	if (input === list) {
+		console.log(todos);
+		todos.forEach(function(todo, i){
+			console.log(i + ": " + todo);
+		})
+	} else if (input === "new") {
+	var newTodos = prompt("Enter a new todo");
+		var push = todos.push(newTodos);
+		console.log(push);
+	} else if (input === "delete") {
+		var index = prompt("Enter the index of the item you want to be deleted.");
+		var splice = todos.splice(index, 1);
+		console.log(splice);
+	}
+}
+
+console.log("You quit the app, thanks for playing!")
+
+
+
+
+
+
