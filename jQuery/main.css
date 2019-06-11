@@ -1,0 +1,23 @@
+.div1 {
+ width: 400px;
+ height: 400px;
+ padding: 100px;
+}
+.div1 .button1 {
+ background: #000;
+ padding: 20px 40px;
+ text-decoration: none;
+ color: #fff;
+ display: inline-block;
+ float: left;
+ border-radius: 40px;
+}
+.div1 .button2 {
+ background: #000;
+ padding: 20px 40px;
+ text-decoration: none;
+ color: #fff;
+ display: inline-block;
+ float: right;
+ border-radius: 40px;
+}
