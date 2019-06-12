@@ -98,4 +98,91 @@ $(function() {
    console.log($('.firstP:first').text())
   $('.firstP:first').text('This is the new text!')
  })
+
+ // inserting before and after an element
+ $('.button').on('click', function() {
+  $('<p>Hello there, this is a new message</p>').insertAfter('.firstP:first')
+ })
+
+ // removing an element
+ $('.button').on('click', function() {
+  $('div').remove('.box')
+ })
+
+ // replacing an element
+ $('.button').on('click', function() {
+  $('div').replaceWith('<h2>This is the new element for the click button</h2>')
+ })
+
+ // attributes and values 
+ $('.button').on('click', function() {
+  $('div img').removeAttr('src')
+ })
+
+ $('.button').on('click', function() {
+  console.log($('div img').val('src'))
+ })
+
+ // style properties
+ if($('.box2').width() > 200) {
+   $('.box2').css({
+     background: 'blue',
+     paddingLeft: '50px'
+   })
+ }
+
+ // traversing
+ $('.box1').children().css({
+   background: 'red',
+   padding: '20px',
+   marginRight: '1.8rem'
+ })
+
+ $('p').each(function() {
+   console.log(this)
+   $(this).css({
+     color: '#fff'
+   })
+ })
+
+ // AJAX
+
+ // GET request
+ $('.button1').on('click', function() {
+  var request = $.ajax({
+    url: "http://jsonplaceholder.typicode.com/posts",
+    method: "GET",
+    // data: { id : menuId },
+    // dataType: "html"
+  });
+   
+  request.done(function( data ) {
+    console.log(data)
+  });
+   
+  request.fail(function( jqXHR, textStatus, error ) {
+    alert( "Request failed: " + textStatus + error);
+  });
+ })
+
+ // POST request
+ $('.button1').on('click', function() {
+  var request = $.ajax({
+    url: "http://jsonplaceholder.typicode.com/posts",
+    method: "POST",
+    data: { userId: 20 },
+    // dataType: "html"
+  });
+   
+  request.done(function( data ) {
+    console.log(data)
+  });
+   
+  request.fail(function( jqXHR, textStatus, error ) {
+    alert( "Request failed: " + textStatus + error);
+  });
+ })
+ // PUT request
+ // DELETE request
+
 });
